@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/twepple/static/css/main.9dafb411.css",
-    "main.js": "/twepple/static/js/main.1efd11a3.js",
+    "main.css": "/twepple/static/css/main.7464f978.css",
+    "main.js": "/twepple/static/js/main.e47160be.js",
     "static/media/grid-pattern.svg": "/twepple/static/media/grid-pattern.7ef376bb8804a143798751d5f2c84b40.svg",
     "index.html": "/twepple/index.html",
-    "main.9dafb411.css.map": "/twepple/static/css/main.9dafb411.css.map",
-    "main.1efd11a3.js.map": "/twepple/static/js/main.1efd11a3.js.map"
+    "main.7464f978.css.map": "/twepple/static/css/main.7464f978.css.map",
+    "main.e47160be.js.map": "/twepple/static/js/main.e47160be.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dafb411.css",
-    "static/js/main.1efd11a3.js"
+    "static/css/main.7464f978.css",
+    "static/js/main.e47160be.js"
   ]
 }
