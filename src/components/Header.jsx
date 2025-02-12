@@ -1,9 +1,11 @@
 // components/Header.jsx
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaGamepad } from 'react-icons/fa';
+import { FaGamepad, FaTimes, FaBars } from 'react-icons/fa';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navItems = [
     { name: 'Home', path: '/' },
@@ -27,7 +29,16 @@ const Header = () => {
         </span>
       </Link>
       
-      <nav>
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-2xl text-gray-300 hover:text-cyan-400 transition-colors"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      {/* Desktop Navigation */}
+      <nav className="hidden md:block">
         <ul className="flex space-x-8">
           {navItems.map((item) => (
             <li key={item.name} className="group relative">
@@ -46,6 +57,31 @@ const Header = () => {
           ))}
         </ul>
       </nav>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <motion.nav
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-lg"
+        >
+          <ul className="flex flex-col py-4">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <Link
+                  to={item.path}
+                  className={`block px-6 py-3 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 ${
+                    location.pathname === item.path ? 'text-cyan-400 bg-gray-800/50' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.nav>
+      )}
     </motion.header>
   );
 };
