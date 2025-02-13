@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/twepple/static/css/main.75903011.css",
-    "main.js": "/twepple/static/js/main.655bb69c.js",
+    "main.css": "/twepple/static/css/main.d8a986ec.css",
+    "main.js": "/twepple/static/js/main.02c43c27.js",
+    "static/media/toddlersvideo.mp4": "/twepple/static/media/toddlersvideo.dcdc82e7fbf8c5c3f713.mp4",
+    "static/media/toddlers-game.jpg": "/twepple/static/media/toddlers-game.810fa53f44d8aafd7c00.jpg",
     "static/media/toddlers1.jpg": "/twepple/static/media/toddlers1.5308052cf9b90361a65c.jpg",
     "static/media/jigsawhd1.jpg": "/twepple/static/media/jigsawhd1.892d4b928d1119bae1d5.jpg",
     "static/media/jigsaw1.jpg": "/twepple/static/media/jigsaw1.b7ef400c2f70d7474688.jpg",
     "static/media/grid-pattern.svg": "/twepple/static/media/grid-pattern.7ef376bb8804a143798751d5f2c84b40.svg",
     "index.html": "/twepple/index.html",
-    "main.75903011.css.map": "/twepple/static/css/main.75903011.css.map",
-    "main.655bb69c.js.map": "/twepple/static/js/main.655bb69c.js.map"
+    "main.d8a986ec.css.map": "/twepple/static/css/main.d8a986ec.css.map",
+    "main.02c43c27.js.map": "/twepple/static/js/main.02c43c27.js.map"
   },
   "entrypoints": [
-    "static/css/main.75903011.css",
-    "static/js/main.655bb69c.js"
+    "static/css/main.d8a986ec.css",
+    "static/js/main.02c43c27.js"
   ]
 }
