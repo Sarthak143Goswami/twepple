@@ -15,14 +15,14 @@ const LandingPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-0 md:pt-0">
         <div className="absolute inset-0 z-0">
           <div className="absolute w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-30 -top-32 -left-32 animate-pulse" />
           <div className="absolute w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-30 -bottom-32 -right-32 animate-pulse delay-1000" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent" />
         </div>
         
-        <div className="relative z-10 text-center px-4 md:px-6">
+        <div className="relative z-10 text-center px-4 md:px-6 -mt-48z md:-mt-20">
           <motion.h1 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}

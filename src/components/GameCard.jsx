@@ -11,7 +11,7 @@ const GameCard = ({ game }) => {
     >
       <div className="bg-gray-900 rounded-3xl p-6 h-full">
         <div className="flex items-center gap-4 mb-6">
-          <span className="text-4xl">{game.icon}</span>
+        <img src={game.icon} alt={game.title} className="w-12 h-12 object-contain rounded-lg" />
           <h3 className="text-2xl font-bold text-white">{game.title}</h3>
         </div>
         
@@ -21,7 +21,7 @@ const GameCard = ({ game }) => {
           {game.features.map((feature, index) => (
             <span 
               key={index}
-              className="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyan-400"
+              className="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyan-400 "
             >
               {feature}
             </span>
