@@ -17,8 +17,8 @@ export const gamesData = [
     },
     {
       id: 2,
-      title: "Jigsaw HD Puzzles",
-      description: "4K puzzles with magical themes",
+      title: "Jigsaw  HD  Puzzles !!!!",
+      description: "4K puzzles with magical themes, Up to 2500 pieces puzzle games",
       appStore: "https://apps.apple.com/us/app/jigsaw-hd-puzzles/id1045849829",
       playStore: "",
       icon: jigsawhd,
@@ -29,7 +29,7 @@ export const gamesData = [
     {
       id: 3,
       title: "Toddler Learning Games",
-      description: "Educational adventures for ages 2-6",
+      description: "Educational adventures for ages 2-6, ABC, 123 & preschool learning",
       appStore: "https://apps.apple.com/us/app/kids-games-for-toddlers-2-to-6/id6736658511",
       playStore: "https://play.google.com/store/apps/details?id=com.twepple.baby.toddler.kids.preschool.learning.activity.games&hl=en_USr",
       icon: toddler,

@@ -1,18 +1,16 @@
 // components/FloatingStats.jsx
 import { motion, useAnimation } from 'framer-motion';
-import { FaDownload, FaStar, FaPuzzlePiece, FaTrophy } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import CountUp from 'react-countup';
+import { FaDownload, FaStar, FaPuzzlePiece, FaTrophy } from 'react-icons/fa';
 
 const FloatingStats = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
+    if (inView) controls.start("visible");
   }, [controls, inView]);
 
   const stats = [
@@ -32,18 +30,24 @@ const FloatingStats = () => {
       {stats.map((stat, index) => (
         <motion.div
           key={stat.label}
-          className="p-2 md:p-4 bg-gray-800/50 rounded-xl md:rounded-2xl backdrop-blur-sm border border-cyan-400/20 hover:border-cyan-400/40 transition-all"
+          className="p-3 md:p-4 bg-gradient-to-br from-purple-900/50 to-cyan-900/50 rounded-xl md:rounded-2xl backdrop-blur-sm border-2 border-cyan-400/20 hover:border-purple-400/40 transition-all group relative overflow-hidden"
           variants={{
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 }
           }}
+          whileHover={{ scale: 1.05 }}
         >
+           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
           <div className="flex items-center gap-2 md:gap-4">
-            <div className="text-xl md:text-3xl text-cyan-400">
+            <motion.div 
+              className="text-2xl md:text-3xl text-cyan-400"
+              animate={{ rotate: [0, 15, -15, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
               {stat.icon}
-            </div>
+            </motion.div>
             <div>
-              <div className="text-xl md:text-3xl font-bold text-cyan-400">
+            <div className="text-xl md:text-3xl font-bold text-cyan-200">
                 <CountUp
                   end={stat.number}
                   suffix={stat.suffix}
@@ -51,7 +55,7 @@ const FloatingStats = () => {
                   duration={2}
                 />
               </div>
-              <div className="text-xs md:text-sm text-gray-400">{stat.label}</div>
+              <div className="text-xs md:text-sm text-cyan-200">{stat.label}</div>
             </div>
           </div>
         </motion.div>

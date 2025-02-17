@@ -1,12 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
-
+body:hover .glow-effect {
+  filter: drop-shadow(0 0 15px rgba(79, 192, 210, 0.5));
+  transition: filter 0.3s ease;
+}
 /* Custom animations */
 @keyframes pulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.6; }
+}
+
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-opacity {
+  animation: pulse-opacity 3s ease-in-out infinite;
 }
 
 .delay-1000 {
@@ -20,4 +33,75 @@
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Comic Neue', cursive;
+}
+
+/* For specific elements needing standard font */
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  from { transform: translateX(-100%) skewX(-15deg); }
+  to { transform: translateX(100%) skewX(-15deg); }
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+  animation: shine 1.5s infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Add custom easing for animations */
+.card-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glow effect for stats cards */
+.stat-glow {
+  box-shadow: 0 0 15px rgba(79, 192, 210, 0.2);
+}
+
+{/* Add to global CSS */}
+@keyframes gradientShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+.animate-gradient-shift {
+  animation: gradientShift 6s ease infinite;
+  background-size: 200% 200%;
 }
