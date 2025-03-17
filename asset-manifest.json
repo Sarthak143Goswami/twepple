@@ -1,19 +1,24 @@
 {
   "files": {
-    "main.css": "/twepple/static/css/main.404f9429.css",
-    "main.js": "/twepple/static/js/main.fd35ada4.js",
+    "main.css": "/twepple/static/css/main.617bcaec.css",
+    "main.js": "/twepple/static/js/main.8a6921dd.js",
     "static/media/toddlersvideo.mp4": "/twepple/static/media/toddlersvideo.dcdc82e7fbf8c5c3f713.mp4",
+    "static/media/traditional-Toddler.jpg": "/twepple/static/media/traditional-Toddler.8f6191129f8aef5f4655.jpg",
     "static/media/toddlers-game.jpg": "/twepple/static/media/toddlers-game.810fa53f44d8aafd7c00.jpg",
+    "static/media/edu-toddler.jpeg": "/twepple/static/media/edu-toddler.0df0c42cac608a6b41e4.jpeg",
     "static/media/toddlers1.jpg": "/twepple/static/media/toddlers1.5308052cf9b90361a65c.jpg",
+    "static/media/puzzle2.jpg": "/twepple/static/media/puzzle2.34949d82294d289fc77e.jpg",
     "static/media/jigsawhd1.jpg": "/twepple/static/media/jigsawhd1.892d4b928d1119bae1d5.jpg",
+    "static/media/puzzle.jpeg": "/twepple/static/media/puzzle.55590a4ee02ae16e0449.jpeg",
+    "static/media/toddler-mobile.jpeg": "/twepple/static/media/toddler-mobile.56a6c2b31e059c16fba7.jpeg",
     "static/media/jigsaw1.jpg": "/twepple/static/media/jigsaw1.b7ef400c2f70d7474688.jpg",
     "static/media/grid-pattern.svg": "/twepple/static/media/grid-pattern.7ef376bb8804a143798751d5f2c84b40.svg",
     "index.html": "/twepple/index.html",
-    "main.404f9429.css.map": "/twepple/static/css/main.404f9429.css.map",
-    "main.fd35ada4.js.map": "/twepple/static/js/main.fd35ada4.js.map"
+    "main.617bcaec.css.map": "/twepple/static/css/main.617bcaec.css.map",
+    "main.8a6921dd.js.map": "/twepple/static/js/main.8a6921dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.404f9429.css",
-    "static/js/main.fd35ada4.js"
+    "static/css/main.617bcaec.css",
+    "static/js/main.8a6921dd.js"
   ]
 }
