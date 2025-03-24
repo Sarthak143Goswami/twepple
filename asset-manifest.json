@@ -1,10 +1,15 @@
 {
   "files": {
-    "main.css": "/twepple/static/css/main.de278feb.css",
-    "main.js": "/twepple/static/js/main.da6e8230.js",
+    "main.css": "/twepple/static/css/main.31c27a53.css",
+    "main.js": "/twepple/static/js/main.f4f99bf7.js",
+    "static/media/math.jpeg": "/twepple/static/media/math.9f83371d0ec602c53af2.jpeg",
+    "static/media/noads.jpeg": "/twepple/static/media/noads.628449896bb5974055a8.jpeg",
     "static/media/toddlersvideo.mp4": "/twepple/static/media/toddlersvideo.dcdc82e7fbf8c5c3f713.mp4",
     "static/media/traditional-Toddler.jpg": "/twepple/static/media/traditional-Toddler.8f6191129f8aef5f4655.jpg",
     "static/media/toddlers-game.jpg": "/twepple/static/media/toddlers-game.810fa53f44d8aafd7c00.jpg",
+    "static/media/ballon.jpeg": "/twepple/static/media/ballon.75f4f313f0993da872bb.jpeg",
+    "static/media/matching.jpeg": "/twepple/static/media/matching.9f7707f594a2aac9f17d.jpeg",
+    "static/media/fruits-more.jpeg": "/twepple/static/media/fruits-more.4c42400009917d8eb85c.jpeg",
     "static/media/toddler-digital.jpeg": "/twepple/static/media/toddler-digital.084f1316ae365269a9ab.jpeg",
     "static/media/edu-toddler.jpeg": "/twepple/static/media/edu-toddler.0df0c42cac608a6b41e4.jpeg",
     "static/media/toddlers1.jpg": "/twepple/static/media/toddlers1.5308052cf9b90361a65c.jpg",
@@ -15,11 +20,11 @@
     "static/media/jigsaw1.jpg": "/twepple/static/media/jigsaw1.b7ef400c2f70d7474688.jpg",
     "static/media/grid-pattern.svg": "/twepple/static/media/grid-pattern.7ef376bb8804a143798751d5f2c84b40.svg",
     "index.html": "/twepple/index.html",
-    "main.de278feb.css.map": "/twepple/static/css/main.de278feb.css.map",
-    "main.da6e8230.js.map": "/twepple/static/js/main.da6e8230.js.map"
+    "main.31c27a53.css.map": "/twepple/static/css/main.31c27a53.css.map",
+    "main.f4f99bf7.js.map": "/twepple/static/js/main.f4f99bf7.js.map"
   },
   "entrypoints": [
-    "static/css/main.de278feb.css",
-    "static/js/main.da6e8230.js"
+    "static/css/main.31c27a53.css",
+    "static/js/main.f4f99bf7.js"
   ]
 }
