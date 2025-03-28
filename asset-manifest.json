@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/twepple/static/css/main.6814ec3e.css",
-    "main.js": "/twepple/static/js/main.cf6460e9.js",
+    "main.css": "/twepple/static/css/main.402b60eb.css",
+    "main.js": "/twepple/static/js/main.f14e0c2b.js",
     "static/media/math.jpeg": "/twepple/static/media/math.9f83371d0ec602c53af2.jpeg",
-    "static/media/noads.jpeg": "/twepple/static/media/noads.628449896bb5974055a8.jpeg",
     "static/media/toddlersvideo.mp4": "/twepple/static/media/toddlersvideo.dcdc82e7fbf8c5c3f713.mp4",
     "static/media/traditional-Toddler.jpg": "/twepple/static/media/traditional-Toddler.8f6191129f8aef5f4655.jpg",
     "static/media/toddlers-game.jpg": "/twepple/static/media/toddlers-game.810fa53f44d8aafd7c00.jpg",
+    "static/media/noads.jpeg": "/twepple/static/media/noads.db03daba6ce9aae8f0f4.jpeg",
     "static/media/ballon.jpeg": "/twepple/static/media/ballon.75f4f313f0993da872bb.jpeg",
     "static/media/matching.jpeg": "/twepple/static/media/matching.9f7707f594a2aac9f17d.jpeg",
     "static/media/octopus.jpeg": "/twepple/static/media/octopus.1b5a8f7da9010690bfca.jpeg",
+    "static/media/select-fruit.jpeg": "/twepple/static/media/select-fruit.c71ead808f1d9bdd8e3d.jpeg",
     "static/media/squirrel.jpeg": "/twepple/static/media/squirrel.66a77e8d83d1401442d9.jpeg",
     "static/media/biggest.jpeg": "/twepple/static/media/biggest.435d7c7d673cbc81a78d.jpeg",
     "static/media/sort-color.jpeg": "/twepple/static/media/sort-color.f141ad16ba6fa9d2c214.jpeg",
@@ -29,7 +30,6 @@
     "static/media/smallest.jpeg": "/twepple/static/media/smallest.1e57bb71cf1417aee447.jpeg",
     "static/media/select-alphabet.jpeg": "/twepple/static/media/select-alphabet.739697d49c63053e9b03.jpeg",
     "static/media/complete-fruit.jpeg": "/twepple/static/media/complete-fruit.7e5822565afabe643091.jpeg",
-    "static/media/select-fruit.jpeg": "/twepple/static/media/select-fruit.7e5822565afabe643091.jpeg",
     "static/media/subtract-nos.jpeg": "/twepple/static/media/subtract-nos.0a6e637d8ffeb81ce2d3.jpeg",
     "static/media/complete-veg.jpeg": "/twepple/static/media/complete-veg.2016e98881a1a435e508.jpeg",
     "static/media/match-animal.jpeg": "/twepple/static/media/match-animal.3755f269c09d6d757a14.jpeg",
@@ -48,11 +48,11 @@
     "static/media/jigsaw1.jpg": "/twepple/static/media/jigsaw1.b7ef400c2f70d7474688.jpg",
     "static/media/grid-pattern.svg": "/twepple/static/media/grid-pattern.7ef376bb8804a143798751d5f2c84b40.svg",
     "index.html": "/twepple/index.html",
-    "main.6814ec3e.css.map": "/twepple/static/css/main.6814ec3e.css.map",
-    "main.cf6460e9.js.map": "/twepple/static/js/main.cf6460e9.js.map"
+    "main.402b60eb.css.map": "/twepple/static/css/main.402b60eb.css.map",
+    "main.f14e0c2b.js.map": "/twepple/static/js/main.f14e0c2b.js.map"
   },
   "entrypoints": [
-    "static/css/main.6814ec3e.css",
-    "static/js/main.cf6460e9.js"
+    "static/css/main.402b60eb.css",
+    "static/js/main.f14e0c2b.js"
   ]
 }
