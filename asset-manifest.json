@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/twepple/static/css/main.402b60eb.css",
-    "main.js": "/twepple/static/js/main.f14e0c2b.js",
+    "main.js": "/twepple/static/js/main.0de06359.js",
     "static/media/math.jpeg": "/twepple/static/media/math.9f83371d0ec602c53af2.jpeg",
     "static/media/toddlersvideo.mp4": "/twepple/static/media/toddlersvideo.dcdc82e7fbf8c5c3f713.mp4",
     "static/media/traditional-Toddler.jpg": "/twepple/static/media/traditional-Toddler.8f6191129f8aef5f4655.jpg",
@@ -49,10 +49,10 @@
     "static/media/grid-pattern.svg": "/twepple/static/media/grid-pattern.7ef376bb8804a143798751d5f2c84b40.svg",
     "index.html": "/twepple/index.html",
     "main.402b60eb.css.map": "/twepple/static/css/main.402b60eb.css.map",
-    "main.f14e0c2b.js.map": "/twepple/static/js/main.f14e0c2b.js.map"
+    "main.0de06359.js.map": "/twepple/static/js/main.0de06359.js.map"
   },
   "entrypoints": [
     "static/css/main.402b60eb.css",
-    "static/js/main.f14e0c2b.js"
+    "static/js/main.0de06359.js"
   ]
 }
