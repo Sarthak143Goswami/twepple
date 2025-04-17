@@ -94,7 +94,6 @@ body {
   box-shadow: 0 0 15px rgba(79, 192, 210, 0.2);
 }
 
-{/* Add to global CSS */}
 @keyframes gradientShift {
   0% { background-position: 0% 50% }
   50% { background-position: 100% 50% }
@@ -105,3 +104,133 @@ body {
   animation: gradientShift 6s ease infinite;
   background-size: 200% 200%;
 }
+
+.modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.modal-content {
+  position: relative !important;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  border: 1px solid rgba(34, 211, 238, 0.2) !important;
+  padding: 2rem !important;
+  border-radius: 1rem !important;
+  width: 90% !important;
+  max-width: 600px !important;
+  margin: auto !important;
+  inset: auto !important;
+}
+
+body.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.react-modal-overlay {
+  z-index: 1000;
+}
+
+.react-modal-content {
+  z-index: 1001;
+  position: relative;
+}
+
+@keyframes gradient-pulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hover\:gradient-pulse:hover {
+  background-size: 200% 200%;
+  animation: gradient-pulse 3s ease infinite;
+}
+
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes shine {
+  to { left: 200%; }
+}
+
+.animate-gradient-x {
+  background-size: 200% auto;
+  animation: gradient-x 5s ease infinite;
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s 2s ease-in-out infinite;
+}
+
+.animate-shine {
+  animation: shine 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes grid-pan {
+  from { background-position: 0 0; }
+  to { background-position: 4rem 4rem; }
+}
+
+@keyframes circuit-pan {
+  from { background-position: 0 0; }
+  to { background-position: 3rem 3rem; }
+}
+
+.animate-grid-pan {
+  animation: grid-pan 20s linear infinite;
+}
+
+.animate-circuit-pan {
+  animation: circuit-pan 10s linear infinite;
+}
+
+/* Custom scrollbar styling */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #22d3ee;
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #818cf8;
+}
+

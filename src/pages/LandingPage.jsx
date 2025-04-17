@@ -1,4 +1,4 @@
-// pages/LandingPage.jsx
+import React from 'react';
 import { motion } from 'framer-motion';
 import AnimatedButton from '../components/AnimatedButton';
 import Header from '../components/Header';
@@ -6,14 +6,39 @@ import Footer from '../components/Footer';
 import GameCard from '../components/GameCard';
 import { gamesData } from '../data/gamesData';
 import FloatingStats from '../components/FloatingStats';
-import { FaTrophy, FaPuzzlePiece, FaDownload } from 'react-icons/fa';
+import { FaTrophy, FaPuzzlePiece, FaDownload, FaStar } from 'react-icons/fa';
 import gridPattern from '../assets/images/grid-pattern.svg';
 import poster from '../assets/images/toddlers-game.jpg';
 import trailer from '../assets/videos/toddlersvideo.mp4';  
 import { useRef, useEffect, useState } from 'react';
 import { VolumeX, Volume2 } from "lucide-react";
 
-
+const reviews = [
+  {
+    name: "Preeti Yadav",
+    rating: 5,
+    text: "Kids love this game's lively animations! It makes learning feel like playtime. Great for keeping little ones engaged and entertained.",
+    avatar: "👩👧"
+  },
+  {
+    name: "Sanjeet",
+    rating: 5,
+    text: "This kids learning game is packed with animation that will keep kids entertained and making learning exciting for kids.",
+    avatar: "👨👦"
+  },
+  {
+    name: "AJAY DHADE",
+    rating: 5,
+    text: "This app is very good for kids because they can study along with playing games on this application.",
+    avatar: "👩👦👦"
+  },
+  {
+    name: "Sitaram Mahajan",
+    rating: 5,
+    text: "This app is a fantastic and engaging way to learn about fruits , animals! The interactive games and vibrant visuals make it easy and fun to discover new fruits, animals their names",
+    avatar: "👩👦👦"
+  }
+];
 const LandingPage = () => {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
@@ -23,6 +48,7 @@ const LandingPage = () => {
       videoRef.current.playbackRate = 0.8;
     }
   }, []);
+
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !isMuted;
@@ -30,76 +56,81 @@ const LandingPage = () => {
     }
   };
 
+  const ReviewCard = ({ review, positionClass }) => (
+    <motion.div
+      initial={{ opacity: 0, x: positionClass.includes('left') ? -50 : 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.5 }}
+      className={`hidden md:block absolute ${positionClass} transform -translate-y-1/2 w-72 z-20`}
+    >
+      <div className="bg-gradient-to-br from-purple-900/80 to-cyan-900/80 p-6 rounded-2xl backdrop-blur-sm border-2 border-cyan-400/30 shadow-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="text-3xl">{review.avatar}</div>
+          <div>
+            <h4 className="text-cyan-100 font-bold">{review.name}</h4>
+            <div className="flex gap-1 text-yellow-400">
+              {[...Array(review.rating)].map((_, i) => (
+                <FaStar key={i} className="w-4 h-4" />
+              ))}
+            </div>
+          </div>
+        </div>
+        <p className="text-cyan-50 italic">"{review.text}"</p>
+      </div>
+    </motion.div>
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 font-['Comic_Neue']">
       <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 pb-20 md:pt-24 md:pb-22 overflow-hidden">
-        {/* Content Container */}
         <div className="relative z-10 text-center px-4 flex-1 flex flex-col items-center justify-center w-full max-w-7xl">
+          {/* Reviews positioned around the video */}
+          <ReviewCard review={reviews[0]} positionClass="left-[-5%] top-[15%]" />
+          <ReviewCard review={reviews[1]} positionClass="left-[-5%] top-[50%]" />
+          <ReviewCard review={reviews[2]} positionClass="right-[-5%] top-[15%]" />
+          <ReviewCard review={reviews[3]} positionClass="right-[-5%] top-[42%]" />
 
-          <div className="absolute inset-0 z-0 opacity-20">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-2 h-2 bg-white rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`
-                }}
-                animate={{
-                  y: [0, -100, 0],
-                  opacity: [0.3, 0.8, 0.3],
-                  scale: [1, 1.5, 1]
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 5,
-                  repeat: Infinity,
-                  delay: Math.random() * 2
-                }}
-              />
-            ))}
-          </div>
-          {/* Main Heading */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-6xl font-bold mb-6 leading-tight"
+          {/* Enhanced Main Heading */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="relative mb-8"
           >
-            <span className="bg-gradient-to-r from-yellow-300 to-pink-400 bg-clip-text text-transparent px-2">
-              Toddler
-            </span> 
-            <span className="text-white px-2">Learning</span>
-            <span className="bg-gradient-to-r from-pink-400 to-yellow-300 bg-clip-text text-transparent px-2">
-              Games
-            </span>
-          </motion.h1>
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 blur-3xl opacity-30" />
+            <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-yellow-300 to-pink-400 bg-clip-text text-transparent px-2">
+                Toddlers
+              </span> 
+              <span className="text-white px-2">Learning</span>
+              <span className="bg-gradient-to-r from-pink-400 to-yellow-300 bg-clip-text text-transparent px-2">
+                Games
+              </span>
+            </h1>
+          </motion.div>
 
-          {/* Subheading */}
+          {/* Animated Subheading */}
           <motion.p 
             className="text-2xl md:text-3xl lg:text-4xl text-white mb-8 max-w-4xl mx-auto font-light tracking-wide"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
           >
-            Spark Curiosity Through Playful Learning Adventures!
+            Where <span className="text-cyan-300 font-semibold">Curiosity</span> Meets 
+            <span className="text-purple-300 font-semibold"> Creativity</span>
           </motion.p>
 
-          {/* Video Container */}
+          {/* Enhanced Video Container */}
           <motion.div 
-            className="relative w-full max-w-xl mb-10 md:mb-14"
+            className="relative w-full max-w-2xl mb-10 md:mb-14"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <div className="relative device-frame bg-gray-800 rounded-[40px] p-4 shadow-2xl transform perspective-1000">
-              {/* Screen Effects */}
-              <div className="absolute inset-0 rounded-[32px] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/15 to-cyan-400/15" />
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/10 to-transparent mix-blend-overlay" />
-              </div>
-              
-              {/* Video */}
+            <div className="relative device-frame bg-gray-800 rounded-[40px] p-4 shadow-2xl transform perspective-1000 border-4 border-cyan-400/20 hover:border-purple-400/40 transition-all">
+              {/* Video element with working mute button */}
               <div className="relative rounded-[32px] overflow-hidden aspect-video border-4 border-gray-900/50">
                 <video
                   ref={videoRef}
@@ -112,57 +143,55 @@ const LandingPage = () => {
                 >
                   <source src={trailer} type="video/mp4" />
                 </video>
-                {/* Mute/Unmute Button */}
-          <button 
-            onClick={toggleMute} 
-            className="absolute bottom-4 right-4 bg-gray-900/75 p-2 rounded-full text-white hover:bg-gray-700"
-          >
-            {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
-          </button>
+                <button 
+                  onClick={toggleMute} 
+                  className="absolute bottom-4 right-4 bg-gray-900/75 p-2 rounded-full text-white hover:bg-gray-700 backdrop-blur-sm z-50"
+                >
+                  {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+                </button>
               </div>
               
-              {/* Device Details */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 h-24 w-2 bg-gray-900 rounded-r-lg" />
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 h-24 w-2 bg-gray-900 rounded-l-lg" />
+              {/* Glowing Effects */}
+              <div className="absolute -inset-8 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 blur-2xl opacity-20 animate-pulse" />
             </div>
 
             {/* Animated Decorations */}
             <motion.div
-              className="absolute -top-4 -left-6 text-5xl"
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -top-8 -left-8 text-6xl"
+              animate={{ y: [0, -20, 0], rotate: [0, 360] }}
+              transition={{ duration: 8, repeat: Infinity }}
             >
               🧩
             </motion.div>
             <motion.div
-              className="absolute -bottom-6 -right-6 text-5xl"
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+              className="absolute -bottom-8 -right-8 text-6xl"
+              animate={{ y: [0, -20, 0], rotate: [360, 0] }}
+              transition={{ duration: 8, repeat: Infinity, delay: 2 }}
             >
               🎨
             </motion.div>
           </motion.div>
 
-          <div className="flex flex-col md:flex-row  gap-6 justify-center w-full max-w-2xl">
-          <a href="https://play.google.com/store/apps/details?id=com.twepple.baby.toddler.kids.preschool.learning.activity.games&hl=en_US" target="_blank" rel="noopener noreferrer">
+          {/* Enhanced Download Buttons */}
+          <div className="flex flex-col md:flex-row gap-6 justify-center w-full max-w-2xl">
+            <a href="https://play.google.com/store/apps/details?id=com.twepple.baby.toddler.kids.preschool.learning.activity.games&hl=en_USr" target="_blank" rel="noopener noreferrer">
               <AnimatedButton 
-                text="Google Play"
+                text="Get on Play Store"
                 icon="android"
                 color="green"
-                className="text-xl py-4 shadow-lg shadow-green-500/30 hover:shadow-green-500/50"
+                className="text-xl py-4 shadow-lg shadow-green-500/30 hover:shadow-green-500/50 transform hover:scale-105 transition-transform"
               />
             </a>
             <a href="https://apps.apple.com/us/app/kids-games-for-toddlers-2-to-6/id6736658511" target="_blank" rel="noopener noreferrer">
               <AnimatedButton 
-                text="App Store"
+                text="Download on App Store"
                 icon="apple"
-                className="text-xl py-4 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50"
+                className="text-xl py-4 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transform hover:scale-105 transition-transform"
               />
             </a>
           </div>
         </div>
 
-        {/* Floating Stats Section - Repositioned */}
         <div className="w-full px-4 mt-20 md:mt-20">
           <FloatingStats />
         </div>
@@ -193,42 +222,96 @@ const LandingPage = () => {
       {/* CTA Section */}
       <section className="py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 -top-32 -left-32" animate-pulse/>
-          <div className="absolute w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 -bottom-32 -right-32 animate-pulse delay-1000" />
+          <motion.div 
+            className="absolute w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 -top-32 -left-32"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.2, 0.4, 0.2]
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity
+            }}
+          />
+          <motion.div 
+            className="absolute w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 -bottom-32 -right-32"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.2, 0.4, 0.2]
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              delay: 2
+            }}
+          />
         </div>
         
         <motion.div 
-          className="max-w-6xl mx-auto bg-gradient-to-br from-cyan-900/40 to-purple-900/40 rounded-3xl p-8 text-center backdrop-blur-xl border-2 border-cyan-400/30 relative overflow-hidden shadow-2xl"
+          className="max-w-6xl mx-auto relative bg-gradient-to-br from-cyan-900/40 to-purple-900/40 rounded-[40px] p-12 text-center backdrop-blur-2xl border-2 border-cyan-400/30 shadow-2xl overflow-hidden"
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
         >
           <div style={{ backgroundImage: `url(${gridPattern})`, opacity: 0.1 }} className="absolute inset-0" />
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text mb-6">
-            Start Your Learning Adventure!
-          </h2>
-          <p className="text-xl md:text-2xl text-cyan-100 mb-8 max-w-2xl mx-auto">
-            Join millions of parents and their little learners in our award-winning educational universe
-          </p>
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            <AnimatedButton 
-              text="Google Play"
-              icon="android"
-              color="green"
-              href="play-store-link"
-              className="w-full md:w-auto"
-            />
-            <AnimatedButton 
-              text="App Store"
-              icon="apple"
-              color="purple"
-              href="app-store-link"
-              className="w-full md:w-auto"
-            />
-          </div>
-          <div className="mt-8 flex items-center justify-center gap-4 text-cyan-400">
-            <FaTrophy className="animate-bounce text-3xl" />
-            <span className="text-xl">4.9/5 Rating Across Stores</span>
-            <FaPuzzlePiece className="animate-spin-slow text-3xl" />
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-transparent bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text">
+                Start Your
+              </span>
+              <span className="block mt-2 text-cyan-100">Learning Adventure!</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-cyan-200 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join millions of parents in our award-winning educational universe
+            </p>
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              {[
+                { 
+                  text: "Google Play", 
+                  icon: "android", 
+                  color: "from-green-400 to-cyan-400",
+                  href: "https://play.google.com/store/apps/details?id=com.twepple.baby.toddler.kids.preschool.learning.activity.games&hl=en_USr",
+                  target:"_blank" ,
+                  rel:"noopener noreferrer"
+                },
+                { 
+                  text: "App Store", 
+                  icon: "apple", 
+                  color: "from-purple-400 to-pink-400",
+                  href: "https://apps.apple.com/us/app/kids-games-for-toddlers-2-to-6/id6736658511",
+                  target:"_blank" ,
+                  rel:"noopener noreferrer"
+                }
+              ].map((btn, i) => (
+                <motion.a
+                  key={btn.text}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={btn.href}
+                  target="_blank"  // Added to open in a new tab
+                  rel="noopener noreferrer"
+                  className={`bg-gradient-to-r ${btn.color} text-gray-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-3 transition-all hover:shadow-lg`}
+                >
+                  <span className="text-xl">{btn.icon === 'apple' ? '' : '▶'}</span>
+                  {btn.text}
+                </motion.a>
+              ))}
+            </div>
+            <div className="mt-8 flex items-center justify-center gap-4">
+              <motion.div 
+                className="flex items-center gap-2 text-cyan-300"
+                animate={{
+                  y: [-5, 5, -5],
+                  transition: {
+                    duration: 3,
+                    repeat: Infinity
+                  }
+                }}
+              >
+                <FaTrophy className="text-3xl" />
+                <span className="text-xl">4.9/5 Ratings</span>
+                <FaPuzzlePiece className="text-3xl" />
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </section>
@@ -286,7 +369,7 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> 
 
       <Footer />
     </div>

@@ -14,11 +14,20 @@ const Header = () => {
     setIsScrolled(latest > 50);
   });
 
+  const handleLogoClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Games', path: '/games' },
     { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: '/contact' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'Blog', path: '/blog' }
   ];
 
   return (
@@ -30,7 +39,12 @@ const Header = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Link to="/" className="flex items-center gap-2 group">
+      <Link 
+        to="/" 
+        className="flex items-center gap-2 group"
+        onClick={handleLogoClick}
+      >
+        
         <motion.div
           whileHover={{ rotate: 360 }}
           transition={{ duration: 0.8 }}
